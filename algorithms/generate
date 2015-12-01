@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo cleaning up directory
+
+# gets everything here and sweeps them into the past folder
+mv 20* past/
+rm *.out
+
+# generates today's file
+kode
+
+# open up problem db
+open http://www.careercup.com/page
