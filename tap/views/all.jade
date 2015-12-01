@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	div(style="margin-left:150px;")
+		h1 People List
+		each person in people
+			div
+				p
+					a(href="/person/#{person._id}") #{person.name}
+					|  #{person.lastContacted} 
+					a(href="/contact/#{person._id}") contact

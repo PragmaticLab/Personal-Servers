@@ -1,0 +1,20 @@
+extends layout
+
+block content
+	div(style="margin-left:150px;")
+		form(name="add new friend", action="/insert", method="post")
+			p name of friend
+			input(type="text", name="name")
+			p priority - how important is he/she
+				a(href="/priority")  current priorities
+			input(type="number", name="weight")
+			p src - how do u know him / her
+			input(type="text", name="src")
+			p contact - how to contact him / her
+			input(type="text", name="contact")
+			p cycle - how often to get in touch (days)
+			input(type="number", name="cycle")
+			p lastContacted - last time contacted
+			input(type="datetime-local", name="lastContacted")
+			p
+			input(type="submit", value="save")

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	div(style="margin-left:150px;")
+		h1 Priority so far
+		each person in people
+			div
+				p
+					a(href="/person/#{person._id}") #{person.name}
+					|	#{person.weight} 
+//					|	#{person.lastContacted}

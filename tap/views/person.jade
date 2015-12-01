@@ -1,0 +1,20 @@
+extends layout
+
+block content
+	div(style="margin-left:150px;")
+		a(href="/delete/#{person._id}", class="btn btn-warning") Delete #{person.name}
+		form(name="add new friend", action="/person/#{person._id}", method="post")
+			p name of friend
+			input(type="text", name="name", value="#{person.name}")
+			p priority - how important is he/she
+			input(type="number", name="weight", value="#{person.weight}")
+			p src - how do u know him / her
+			input(type="text", name="src", value="#{person.src}")
+			p contact - how to contact him / her
+			input(type="text", name="contact", value="#{person.contact}")
+			p cycle - how often to get in touch (days)
+			input(type="number", name="cycle", value="#{person.cycle}")
+			p lastContacted - last time contacted
+			input(type="datetime-local", name="lastContacted", value="#{person.lastContacted.toISOString().substring(0, person.lastContacted.toISOString().length-1)}")
+			p
+			input(type="submit", value="save")
