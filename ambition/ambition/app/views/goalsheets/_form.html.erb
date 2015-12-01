@@ -1,0 +1,39 @@
+<%= form_for @goalsheet do |f| %>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.date_select :time %>
+  </div>
+
+  <div class="tasks">
+    <%= f.fields_for(:tasks) do |task| %>
+    <div class="task">
+    <div class="field">
+      <%= task.check_box :status %>
+      <%= task.text_area :description %>
+      <%= task.text_area :comments %>
+      <%= task.check_box :_destroy %>
+      <%= task.label :_destroy, "remove" %>
+    </div>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<button onclick="add_fields()" style="margin-bottom:30px;">Add task</button>
+
+<script>
+function add_fields() {
+  var length = document.getElementsByClassName("task").length
+  var form_html = document.getElementsByClassName("task")[length-1].innerHTML;
+  for (var i = 0; i < 10; i++)
+  {
+    form_html = form_html.replace('[' + (length-1).toString() + ']', '[' + length.toString() + ']');
+    form_html = form_html.replace("attributes_" + (length-1).toString(), "attributes_" + length.toString());  
+  }
+  form_html = '<div class="task">' + form_html + '</div>';
+  document.getElementsByClassName("tasks")[0].innerHTML = document.getElementsByClassName("tasks")[0].innerHTML + form_html;
+}
+</script>

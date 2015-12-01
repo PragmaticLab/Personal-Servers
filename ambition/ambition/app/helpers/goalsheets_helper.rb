@@ -1,0 +1,2 @@
+module GoalsheetsHelper
+end
