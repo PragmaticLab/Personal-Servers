@@ -1,0 +1,14 @@
+time = Time.new
+filename = time.year.to_s + '%02d' % time.month + '%02d' % time.day
+./!output(filename + ".cc")
+
+.#include <iostream>
+.#include <string>
+.#include <vector>
+.
+.
+.int main(int argc, char* argv[])
+.{
+.    return 0;
+.}
+.

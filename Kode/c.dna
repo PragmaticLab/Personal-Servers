@@ -1,0 +1,13 @@
+time = Time.new
+filename = time.year.to_s + '%02d' % time.month + '%02d' % time.day
+./!output(filename + ".c")
+
+.#include <stdio.h>
+.#include <string.h>
+.
+.
+.int main(int argc, char *argv[])
+.{
+
+.    return 0;
+.}

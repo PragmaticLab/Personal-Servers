@@ -1,0 +1,46 @@
+#!/bin/bash          
+# echo Creating a file of random language
+# echo ...
+
+expressions=("C" "C++" "Java" "Python" "Ruby" "Go" "JavaScript")
+RANDOM=$$$(date +%s)
+chosen=""
+
+while [ 1 ]
+do
+	selectedexpression=${expressions[$RANDOM % ${#expressions[@]} ]}
+    chosen=$selectedexpression
+    break
+done
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+if [ $chosen = "C" ]
+then
+	ruby $DIR/ribo $DIR/c.dna
+	echo C
+elif [ $chosen = "C++" ]
+then
+	ruby $DIR/ribo $DIR/c++.dna
+	echo C++
+elif [ $chosen = "Java" ]
+then
+	mkdir $(date +%Y%m%d)
+	ruby $DIR/ribo $DIR/java.dna
+	echo Java
+elif [ $chosen = "Python" ]
+then
+	ruby $DIR/ribo $DIR/python.dna
+	echo Python
+elif [ $chosen = "Ruby" ]
+then
+	ruby $DIR/ribo $DIR/ruby.dna
+	echo Ruby
+elif [ $chosen = "Go" ]
+then
+	ruby $DIR/ribo $DIR/go.dna
+	echo Go
+else 
+	ruby $DIR/ribo $DIR/js.dna
+	echo JavaScript
+fi

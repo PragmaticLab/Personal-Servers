@@ -1,0 +1,16 @@
+time = Time.new
+filename = time.year.to_s + '%02d' % time.month + '%02d' % time.day
+./!output(filename + ".py")
+
+.import math
+.import datetime
+.import re
+.
+.
+
+
+.def main():
+.    print "sup"
+.
+
+.main()
