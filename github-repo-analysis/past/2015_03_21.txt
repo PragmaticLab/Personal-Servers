@@ -1,0 +1,13 @@
+https://github.com/rgladwell/imap-upload
+
+Internet Message Access Protocol (IMAP) is a protocol for e-mail retrieval.
+
+This repo lets user upload emails to gmail via iMAP
+
+optparse:
+- parser.add_option('-n', '--new', help='creates a new object') <-- -n and --new are the same option, add in help msg to be used in builtin help
+- (opts, args) = parser.parse_args() 
+>>> parser.add_option("--files", action="append", default=['~/.mypkg/defaults'])
+>>> opts, args = parser.parse_args(['--files', 'overrides.mypkg'])
+>>> opts.files
+['~/.mypkg/defaults', 'overrides.mypkg']

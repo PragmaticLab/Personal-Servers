@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo cleaning up directory
+
+# gets everything here and sweeps them into the past folder
+mv 20* past/
+
+now=$(date +"%Y_%m_%d")
+touch $now.txt

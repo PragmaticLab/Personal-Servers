@@ -1,0 +1,23 @@
+https://github.com/jbcurtin/microapps/tree/master/photobook
+
+schema of the photobook:
+
+Photo 
+- name
+- caption
+- data (the image)
+- slug 
+
+Url patterns:
+- api/(?P<slug>[\S]+)/ calls API_data
+returns json of photo object
+- api/ calls API_all
+returns all photobook in json format
+- (?P<slug>[\S]+)/ calls data
+same as api/(re^) but views in html 
+- ^ calls photobook_all
+same as API_all, but displays in html
+
+Comments:
+- get_object_or_404 <-- raises 404 instead of does not exist, for api purposes
+- pretty basic app that I am familiar with

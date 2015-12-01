@@ -1,0 +1,17 @@
+https://github.com/darqu/tddc32/tree/master/TDDC32%20projekt%20copy/src/Animation
+
+Animation.java
+- basically calls mysql wrapper and start the window
+
+StartWindow.java
+- constructor: creates a new JFrame, sets the layout and background
+- JPanel: generic place to gather all the JFrame elements together
+http://stackoverflow.com/questions/3497889/difference-between-jpanel-jframe-jcomponent-and-japplet
+- adds in textfields for username, pass
+- eventListener on click for the textfields, will log the user in and start the game
+
+GameWindow.java
+- constructor: creates a window, adding in the buttons and drawing area
+- drawing area is just a green textarea
+- buttons are a bunch of language that I cant understand, but essentially a list of event listeners that process the data and prints out whats happening
+

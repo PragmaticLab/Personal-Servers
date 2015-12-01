@@ -1,0 +1,15 @@
+https://github.com/hjwp/jedi-vim
+
+no idea what happened in the plugin, so I decided to learn vim instead
+
+vim: 
+- normal mode: default, you can return to normal from other states via esp
+- insertion mode can be entered in several ways
+- visual mode: press v, highlight stuff?
+
+insert mode: A - end of curr, I - start of curr, a - curr_location, o - line below, O - above curr, S - substitute this line
+
+movement in normal: h <-, j down, k up, l ->
+w move forward 1 word, b 1 word back
+
+https://pascalprecht.github.io/2014/03/18/-i-use-vim/
