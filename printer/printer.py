@@ -3,8 +3,8 @@ import time
 from splinter import Browser
 
 class Printer:
-	def __init__(self, name="Brother_HL_L2300D_series"):
-	# def __init__(self, name="HLL2300D"):
+	# def __init__(self, name="Brother_HL_L2300D_series"):
+	def __init__(self, name="HLL2300D"):
 		self.name = name
 
 	def printer_print(self, directory="output.png", page_start=1, page_end=9999):
@@ -20,7 +20,7 @@ class Printer:
 	def saveWebToFile(self, url, directory="output.png"):
 		print "saving " + url + " to " + directory
 		with Browser() as browser:
-			browser.driver.set_window_size(2240, 1200)
+			browser.driver.set_window_size(1740, 800)
 			browser.visit(url)
 			time.sleep(4)
 			ss = browser.screenshot()
