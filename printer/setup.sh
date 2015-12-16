@@ -1,3 +1,3 @@
-sudo pip install pdfkit schedule
+sudo pip install pdfkit schedule praw
 sudo apt-get install wkhtmltopdf wget
 
