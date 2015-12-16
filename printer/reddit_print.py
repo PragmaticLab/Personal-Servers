@@ -4,7 +4,7 @@ import time
 
 SUBREDDITS = ['MachineLearning']
 printer = Printer()
-directory = "output.pdf"
+directory = "output.png"
 
 def getUrls():
 	list_of_urls = []
@@ -19,9 +19,6 @@ def reddit_job():
 	print "=== started reddit job ==="
 	urls = getUrls()
 	for url in urls:
-		if "." in url[-4:-1]: # if it's a pdf file
-			printer.printUrl(url, directory, 1, 2)
-		else:
-			printer.printUrl(url, directory, 1, 2)
+		printer.printUrl(url, directory, 1, 2)
 		time.sleep(10)
 	print "=== finished reddit job ==="

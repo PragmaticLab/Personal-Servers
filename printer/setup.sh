@@ -1,3 +1,3 @@
-sudo pip install pdfkit schedule praw
+sudo pip install Pillow schedule praw 
 sudo apt-get install wkhtmltopdf wget
 
