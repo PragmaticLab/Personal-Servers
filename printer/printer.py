@@ -1,4 +1,5 @@
 import os
+import urllib2
 import time
 from splinter import Browser
 
@@ -19,14 +20,22 @@ class Printer:
 
 	def saveWebToFile(self, url, directory="output.png"):
 		print "saving " + url + " to " + directory
-		with Browser() as browser:
-			browser.driver.set_window_size(1740, 800)
-			browser.visit(url)
-			time.sleep(4)
-			ss = browser.screenshot()
-			os.system("mv " + ss + " " + directory)
+		if "." in url[-4:-1]:
+			response = urllib2.urlopen(url)
+			html = response.read()
+			f = open(directory, 'wb')
+			f.write(html)
+			f.close()
+		else:
+			with Browser() as browser:
+				browser.driver.set_window_size(1040, 800)
+				browser.visit(url)
+				time.sleep(4)
+				ss = browser.screenshot()
+				os.system("mv " + ss + " " + directory)
 		print "done saving"
 
 	def printUrl(self, url, directory="output.png", page_start=1, page_end=9999):
 		self.saveWebToFile(url, directory)
 		self.printer_print(directory, page_start, page_end)
+

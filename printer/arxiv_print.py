@@ -16,7 +16,7 @@ def getUrls():
 		dom =  lxml.html.fromstring(connection.read())
 		for link in dom.xpath('//a/@href'):
 			if "/pdf" in link:
-				list_of_urls += ["http://arxiv.org" + link]
+				list_of_urls += ["http://arxiv.org" + link + ".pdf"]
 	return list(set(list_of_urls))
 
 def arxiv_job():
@@ -24,7 +24,5 @@ def arxiv_job():
 	urls = getUrls()
 	for url in urls:
 		printer.printUrl(url, directory, 1, 2)
-		time.sleep(5)
+		time.sleep(15)
 	print "=== finished reddit job ==="
-
-arxiv_job()
